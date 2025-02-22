@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body class="flex  bg-gray-300">
+    
+        <!-- start navbar  -->
+
+
+
+        <div class="flex flex-col  w-64 bg-gray-50 " style="height: 38rem;" >
+            <!-- header part -->
+             <div class="flex p-4  gap-2 ">
+                <img src="logo.png" class="h-8 h-8 rounded-full" alt="">
+                <span class="text-blue-600 font-semibold text-xl " >SOFTONIC</span>
+             </div>
+             <!-- end of header -->
+
+             <!-- start of the menu list -->
+              <div class="flex flex-col">
+                <div class="flex">
+                    <span class="p-4 text-gray-500 text-md ">Menu</span>
+                </div>
+
+
+                <div class="flex flex-col text-gray-500  ">
+
+                <div role="button" class=" p-2 gap-2 text-lg font-semibold flex hover:bg-blue-600  hover:transistion rounded-lg hover:text-white  ml-3" style="width: 14rem;">
+                    <div class=" flex items-center ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-speedometer" viewBox="0 0 16 16">
+                            <path d="M8 2a.5.5 0 0 1 .5.5V4a.5.5 0 0 1-1 0V2.5A.5.5 0 0 1 8 2M3.732 3.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707M2 8a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 8m9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5m.754-4.246a.39.39 0 0 0-.527-.02L7.547 7.31A.91.91 0 1 0 8.85 8.569l3.434-4.297a.39.39 0 0 0-.029-.518z"/>
+                            <path fill-rule="evenodd" d="M6.664 15.889A8 8 0 1 1 9.336.11a8 8 0 0 1-2.672 15.78zm-4.665-4.283A11.95 11.95 0 0 1 8 10c2.186 0 4.236.585 6.001 1.606a7 7 0 1 0-12.002 0"/>
+                          </svg>
+                    </div>
+                    <span class="ml-2">Dashboard</span>
+                    
+
+                </div>
+                <div role="button" class=" p-2 gap-2 text-lg font-semibold flex hover:bg-blue-600  hover:transistion rounded-lg hover:text-white  ml-3" style="width: 14rem;">
+                    <div class="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-back" viewBox="0 0 16 16">
+                            <path d="M0 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z"/>
+                          </svg>
+                    </div>
+                    <span class="ml-2">Components</span>
+
+                    
+
+                </div>
+                <div role="button" class=" p-2 gap-2 flex hover:bg-blue-600 text-lg font-semibold hover:transistion rounded-lg hover:text-white  ml-3" style="width: 14rem;">
+                    <div class="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-bag-check-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0m-.646 5.354a.5.5 0 0 0-.708-.708L7.5 10.793 6.354 9.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                          </svg>
+                    </div>
+                    <span class="ml-2">Extra Components</span>
+                    
+
+                </div>
+                <div role="button" class=" p-2 gap-2 flex hover:bg-blue-600 text-lg font-semibold  hover:transistion rounded-lg hover:text-white  ml-3" style="width: 14rem;">
+                    <div class=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-grid" viewBox="0 0 16 16">
+                        <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5z"/>
+                      </svg></div>
+                    <span class="ml-2">Layout</span>
+                    
+
+                </div>
+                <!-- form and table section -->
+                <div class="flex">
+                    <span class="p-4 text-gray-500 text-md ">Form & Tables</span>
+                </div>
+                <div role="button" class=" p-2 gap-2 flex hover:bg-blue-600 text-lg font-semibold  hover:transistion rounded-lg hover:text-white  ml-3" style="width: 14rem;">
+                    <div class=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-octagon-fill" viewBox="0 0 16 16">
+                        <path d="M11.107 0a.5.5 0 0 1 .353.146l4.394 4.394a.5.5 0 0 1 .146.353v6.214a.5.5 0 0 1-.146.353l-4.394 4.394a.5.5 0 0 1-.353.146H4.893a.5.5 0 0 1-.353-.146L.146 11.46A.5.5 0 0 1 0 11.107V4.893a.5.5 0 0 1 .146-.353L4.54.146A.5.5 0 0 1 4.893 0z"/>
+                      </svg></div>
+                    <span class="ml-2">Form Elements</span>
+                    
+
+                </div>
+                <div role="button" class=" p-2 gap-2 flex hover:bg-blue-600 text-lg font-semibold  hover:transistion rounded-lg hover:text-white  ml-3" style="width: 14rem;">
+                    <div class=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-layout-sidebar-inset" viewBox="0 0 16 16">
+                        <path d="M14 2a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zM2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2z"/>
+                        <path d="M3 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/>
+                      </svg></div>
+                    <span class="ml-2">Form Layout</span>
+                    
+
+                </div>
+                <div role="button" class=" p-2 gap-2 flex hover:bg-blue-600 text-lg font-semibold  hover:transistion rounded-lg hover:text-white  ml-3" style="width: 14rem;">
+                    <div class=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-pen-fill" viewBox="0 0 16 16">
+                        <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001"/>
+                      </svg></div>
+                    <span class="ml-2">Form Editor</span>
+                    
+
+                </div>
+                <div role="button" class=" p-2 gap-2 flex hover:bg-blue-600 text-lg font-semibold  hover:transistion rounded-lg hover:text-white  ml-3" style="width: 14rem;">
+                    <div class=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-table" viewBox="0 0 16 16">
+                        <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm15 2h-4v3h4zm0 4h-4v3h4zm0 4h-4v3h3a1 1 0 0 0 1-1zm-5 3v-3H6v3zm-5 0v-3H1v2a1 1 0 0 0 1 1zm-4-4h4V8H1zm0-4h4V4H1zm5-3v3h4V4zm4 4H6v3h4z"/>
+                      </svg></div>
+                    <span class="ml-2">Table</span>
+                    
+
+                </div>
+                <div role="button" class=" mb-2 p-2 gap-2 flex hover:bg-blue-600 text-lg font-semibold  hover:transistion rounded-lg hover:text-white  ml-3" style="width: 14rem;">
+                    <div class=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-database" viewBox="0 0 16 16">
+                        <path d="M4.318 2.687C5.234 2.271 6.536 2 8 2s2.766.27 3.682.687C12.644 3.125 13 3.627 13 4c0 .374-.356.875-1.318 1.313C10.766 5.729 9.464 6 8 6s-2.766-.27-3.682-.687C3.356 4.875 3 4.373 3 4c0-.374.356-.875 1.318-1.313M13 5.698V7c0 .374-.356.875-1.318 1.313C10.766 8.729 9.464 9 8 9s-2.766-.27-3.682-.687C3.356 7.875 3 7.373 3 7V5.698c.271.202.58.378.904.525C4.978 6.711 6.427 7 8 7s3.022-.289 4.096-.777A5 5 0 0 0 13 5.698M14 4c0-1.007-.875-1.755-1.904-2.223C11.022 1.289 9.573 1 8 1s-3.022.289-4.096.777C2.875 2.245 2 2.993 2 4v9c0 1.007.875 1.755 1.904 2.223C4.978 15.71 6.427 16 8 16s3.022-.289 4.096-.777C13.125 14.755 14 14.007 14 13zm-1 4.698V10c0 .374-.356.875-1.318 1.313C10.766 11.729 9.464 12 8 12s-2.766-.27-3.682-.687C3.356 10.875 3 10.373 3 10V8.698c.271.202.58.378.904.525C4.978 9.71 6.427 10 8 10s3.022-.289 4.096-.777A5 5 0 0 0 13 8.698m0 3V13c0 .374-.356.875-1.318 1.313C10.766 14.729 9.464 15 8 15s-2.766-.27-3.682-.687C3.356 13.875 3 13.373 3 13v-1.302c.271.202.58.378.904.525C4.978 12.71 6.427 13 8 13s3.022-.289 4.096-.777c.324-.147.633-.323.904-.525"/>
+                      </svg></div>
+                    <span class="ml-2">Databases</span>
+                    
+
+                </div>
+                 <!-- end of form and table section -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+
+
+
+              </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+            
+
+             <!-- end of menu list -->
+
+             
+        
+    
+        <!-- end of nav -->
+
+
+        <!-- main body content div -->
+
+            <div class="flex flex-col ml-4 " >
+                <!-- the Profile Statistics part -->
+                <h3 class="text-gray-800 py-3 font-semibold">Profile Statistics</h3>
+                <!-- the end of Profile Statistics part -->
+
+
+                <!-- top cards -->
+                <div class="flex h-auto w-auto gap-6 ">
+
+            
+                    <div class="flex  bg-gray-100 shadow-lg rounded-lg" style="height: 6rem; width: 10rem;" >
+                      <div class="flex p-1 ml-2 items-center space-x-4">
+                          <div class="bg-purple-400 text-gray-100 p-2 rounded-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-binoculars" viewBox="0 0 16 16">
+                            <path d="M3 2.5A1.5 1.5 0 0 1 4.5 1h1A1.5 1.5 0 0 1 7 2.5V5h2V2.5A1.5 1.5 0 0 1 10.5 1h1A1.5 1.5 0 0 1 13 2.5v2.382a.5.5 0 0 0 .276.447l.895.447A1.5 1.5 0 0 1 15 7.118V14.5a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 14.5v-3a.5.5 0 0 1 .146-.354l.854-.853V9.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v.793l.854.853A.5.5 0 0 1 7 11.5v3A1.5 1.5 0 0 1 5.5 16h-3A1.5 1.5 0 0 1 1 14.5V7.118a1.5 1.5 0 0 1 .83-1.342l.894-.447A.5.5 0 0 0 3 4.882zM4.5 2a.5.5 0 0 0-.5.5V3h2v-.5a.5.5 0 0 0-.5-.5zM6 4H4v.882a1.5 1.5 0 0 1-.83 1.342l-.894.447A.5.5 0 0 0 2 7.118V13h4v-1.293l-.854-.853A.5.5 0 0 1 5 10.5v-1A1.5 1.5 0 0 1 6.5 8h3A1.5 1.5 0 0 1 11 9.5v1a.5.5 0 0 1-.146.354l-.854.853V13h4V7.118a.5.5 0 0 0-.276-.447l-.895-.447A1.5 1.5 0 0 1 12 4.882V4h-2v1.5a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5zm4-1h2v-.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zm4 11h-4v.5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5zm-8 0H2v.5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5z"/>
+                          </svg>
+                           </div>
+                          <div class="flex flex-col">
+                            <span class="text-sm text-gray-400">Profile Views</span>
+                            <span class=" font-semibold text-gray-900" >112,000</span>
+                           </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+                    <div class="flex   bg-gray-100 shadow-lg rounded-lg" style="height: 6rem; width: 10rem;" >
+                        <div class="flex p-1 ml-2 items-center space-x-4">
+                            <div class="bg-green-400 text-bold p-2 rounded-lg text-gray-100 ">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+                                  </svg>
+                             </div>
+                            <div class="flex flex-col">
+                              <span class="text-sm text-gray-400">Followers</span>
+                              <span class=" font-semibold text-gray-900" >183,000</span>
+                             </div>
+                          </div>
+                      </div>
+
+
+                      <div class="flex   bg-gray-100 shadow-lg rounded-lg " style="height: 6rem; width: 10rem;" >
+                        <div class="flex p-1 ml-2 items-center space-x-4">
+                            <div class="bg-blue-200 p-2 rounded-lg text-gray-100 ">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-person-add" viewBox="0 0 16 16">
+                                    <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0m-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0M8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4"/>
+                                    <path d="M8.256 14a4.5 4.5 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10q.39 0 .74.025c.226-.341.496-.65.804-.918Q8.844 9.002 8 9c-5 0-6 3-6 4s1 1 1 1z"/>
+                                  </svg>
+                             </div>
+                            <div class="flex flex-col">
+                              <span class="text-sm text-gray-400">Following</span>
+                              <span class=" font-semibold text-gray-900" >90,000</span>
+                             </div>
+                          </div>
+                      </div>
+
+
+                    
+                      <div class="flex   bg-gray-100 shadow-lg rounded-lg text-gray-100" style="height: 6rem; width: 10rem;" >
+                        <div class="flex p-1 ml-2 items-center space-x-4">
+                            <div class="bg-red-400 p-2 rounded-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-floppy-fill" viewBox="0 0 16 16">
+                                    <path d="M0 1.5A1.5 1.5 0 0 1 1.5 0H3v5.5A1.5 1.5 0 0 0 4.5 7h7A1.5 1.5 0 0 0 13 5.5V0h.086a1.5 1.5 0 0 1 1.06.44l1.415 1.414A1.5 1.5 0 0 1 16 2.914V14.5a1.5 1.5 0 0 1-1.5 1.5H14v-5.5A1.5 1.5 0 0 0 12.5 9h-9A1.5 1.5 0 0 0 2 10.5V16h-.5A1.5 1.5 0 0 1 0 14.5z"/>
+                                    <path d="M3 16h10v-5.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5zm9-16H4v5.5a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5zM9 1h2v4H9z"/>
+                                  </svg>
+                             </div>
+                            <div class="flex flex-col">
+                              <span class="text-sm text-gray-400">Saved Post</span>
+                              <span class=" font-semibold text-gray-900" >112</span>
+                             </div>
+                          </div>
+                      </div>
+
+
+
+                    <div class=" flex justify-center bg-gray-100 shadow-lg rounded-lg " style="height: 6rem; width: 14rem;" >
+                        <div class="flex p-1 ml-4 items-center space-x-2">
+                            <div class="">
+                                <img src="face1.jpg" class="h-12 h-12 rounded-full" alt="">
+                             </div>
+                            <div class="flex flex-col">
+                              <span class="text-md font-semibold text-gray-900">Mugumya Davis</span>
+                              <span class="  text-gray-400" >@davis</span>
+                             </div>
+                          </div>
+                    </div>
+                </div>
+
+                <!-- end of top carts -->
+
+                <!-- start of profile visit and recent messages -->
+
+                <div class="flex flex-row gap-4 mt-4">
+                   
+                    <div class="bg-gray-50"   style="width:45rem; height: 18rem; " >
+                        <h6 class="text-gray-800 p-2 text-sm font-semibold">Profile Visit</h6>
+                        <canvas id="myChart" class="mr-4 ml-4" width="200" height="65"></canvas>
+                    </div>
+                
+                    <div class="bg-gray-50 flex flex-col " style="width:14rem ;">
+                        <h6 class="text-gray-800 p-2 text-lg font-sm">Recent Messages</h6>
+
+                        <div class="flex items-center p-2 gap-2">
+                            <img src="av1.jpg" class="h-8 h-8 rounded-full" alt="">
+                            <div class="flex flex-col">
+                                <span class="text-sm font-semibold">Mugumya Davis</span>
+                                <span class="text-xs">mugumyadavis@gmail.com</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-2 gap-2">
+                            <img src="av2.jpg" class="h-8 h-8 rounded-full" alt="">
+                            <div class="flex flex-col">
+                                <span class="text-sm font-semibold">Ben Dan</span>
+                                <span class="text-xs">mugus@gmail.com</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-2 gap-2">
+                            <img src="av3.jfif" class="h-8 h-8 rounded-full" alt="">
+                            <div class="flex flex-col">
+                                <span class="text-sm font-semibold">Gigs Dav</span>
+                                <span class="text-xs">mugumvis@gmail.com</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-2 gap-2">
+                            <img src="av4.png" class="h-8 h-8 rounded-full" alt="">
+                            <div class="flex flex-col">
+                                <span class="text-sm font-semibold">Dan Davis</span>
+                                <span class="text-xs">mugumavis@gmail.com</span>
+                            </div>
+                        </div>
+
+                        <div  class="flex items-center justify-center p-2    gap-2" >
+                            <button style="width: 12rem;" class="bg-gray-200 p-3  text-gray-800 text-sm font-semibold">Start Conversation</button>
+
+                        </div>
+
+
+
+
+
+
+                    </div>
+
+
+
+                </div>
+                 <!-- end of profile visit and recent messages -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <!-- last content under that -->
+               
+                <div class="flex flex-row gap-4 mt-4">
+
+
+                   
+                    <div class=" flex space-x-4  "   style="width:45rem; height: 18rem; " >
+
+                        <div class="flex-2 flex-col space-y-4 bg-gray-50 p-3">
+                            <h6 class="text-gray-800 p-2 text-sm font-semibold">Profile Visit</h6>
+
+                            <div class="flex space-x-2  items-center  ">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-circle-fill text-blue-200" viewBox="0 0 16 16">
+                                    <circle cx="8" cy="8" r="8"/>
+                                  </svg>
+                                  <span>Europe</span>
+                                  <span class=" mr-8">676</span>
+
+                            </div>
+                            <div class="flex items-center space-x-2 ">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-circle-fill text-red-200" viewBox="0 0 16 16">
+                                    <circle cx="8" cy="8" r="8"/>
+                                  </svg>
+                                  <span>Asia</span>
+                                  <span class=" mr-8">456</span>
+
+                            </div>
+                            <div class="flex items-center space-x-2 ">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-circle-fill text-green-200" viewBox="0 0 16 16">
+                                    <circle cx="8" cy="8" r="8"/>
+                                  </svg>
+                                  <span>Africa</span>
+                                  <span class=" mr-8">545</span>
+
+                            </div>
+                            <div class="flex items-center space-x-2 ">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-circle-fill text-yellow-200" viewBox="0 0 16 16">
+                                    <circle cx="8" cy="8" r="8"/>
+                                  </svg>
+                                  <span>UAE</span>
+                                  <span class=" mr-8">453</span>
+
+                            </div>
+                            <div class="flex items-center gap-2 ">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-circle-fill text-black-200" viewBox="0 0 16 16">
+                                    <circle cx="8" cy="8" r="8"/>
+                                  </svg>
+                                  <span>America</span>
+                                  <span class=" mr-8">572</span>
+
+                            </div>
+                           
+
+
+                        </div>
+
+
+                        <!-- Lastest comments  -->
+                        <div class="flex-1  bg-gray-50">
+                            <h6 class="text-gray-800 p-4 text-sm font-semibold">Latest Comments</h6>
+
+                            <div class=" text-gray-800 p-4 text-xs font-semibold flex p-5">
+                                <span>Name</span>
+                                <span class="ml-36">Comment</span>
+                            </div>
+                            <hr class="border-gray-300 ml-4 mr-6">
+                            <div class="text-gray-800 p-4 text-xs font-semibold flex p-5 gap-24">
+                              <div class="flex items-center gap-2">
+                                <img src="face1.jpg" class="h-8 w-8 rounded-full">
+                                <div class="flex flex-col space-y-2 ">
+                                    <span>Davis</span>
+                                    <span>Dan</span>
+                                </div>
+                              </div>
+                                <span class="text-gray-800 p-2 text-sm font-semibold">congratulations on your graduations</span>
+                            </div>
+                            <hr class="border-gray-300 ml-4 mr-6">
+                            <div class="text-gray-800 p-4 text-xs font-semibold flex p-5 gap-24">
+                                <div class="flex items-center gap-2">
+                                  <img src="av2.jpg" class="h-8 w-8 rounded-full">
+                                  <div class="flex flex-col space-y-2 ">
+                                      <span>Peter</span>
+                                      <span>Levis</span>
+                                  </div>
+                                </div>
+                                  <span class="text-gray-800 p-2 text-sm font-semibold">success man</span>
+                              </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </div>
+
+                        
+                    </div>
+
+                    <div class="bg-gray-50 flex flex-col " style="width:14rem ;">
+                        <div class="flex-2 flex-col space-y-4  p-3">
+
+                        <h6 class="text-gray-800 p-4 text-sm font-semibold">Visitors Profile</h6>
+
+                        <div class="flex space-x-2  items-center  ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-circle-fill text-blue-200" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"/>
+                              </svg>
+                              <span>Europe</span>
+                              <span class=" mr-8">80%</span>
+
+                        </div>
+                        <div class="flex items-center space-x-2 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-circle-fill text-red-200" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"/>
+                              </svg>
+                              <span>Asia</span>
+                              <span class=" mr-8">70%</span>
+
+                        </div>
+                        <div class="flex items-center space-x-2 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-circle-fill text-green-200" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"/>
+                              </svg>
+                              <span>Africa</span>
+                              <span class=" mr-8">30%</span>
+
+                        </div>
+                        <div class="flex items-center space-x-2 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-circle-fill text-yellow-200" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"/>
+                              </svg>
+                              <span>UAE</span>
+                              <span class=" mr-8">30%</span>
+
+                        </div>
+                        <div class="flex items-center gap-2 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-circle-fill text-black-200" viewBox="0 0 16 16">
+                                <circle cx="8" cy="8" r="8"/>
+                              </svg>
+                              <span>America</span>
+                              <span class=" mr-8">40%</span>
+
+                        </div>
+                        </div>
+                       
+                    </div>
+                    
+
+
+
+
+
+                    </div>
+                
+
+
+
+
+
+
+            
+                <!-- end of the last content -->
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         <!-- end of main body content div -->
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<script>
+  
+  window.onload = function() {
+            // Get the context of the canvas element
+            var ctx = document.getElementById('myChart').getContext('2d');
+            
+            // Create the chart instance
+            var myChart = new Chart(ctx, {
+                type: 'bar', // Bar chart type
+                data: {
+                    labels: ['January', 'February', 'March', 'April', 'May'], // X-axis labels
+                    datasets: [{
+                        label: 'Monthly Sales',
+                        data: [65, 59, 80, 81, 56], // Y-axis data points
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)', // Bar color
+                        borderColor: 'rgba(75, 192, 192, 1)', // Border color
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true // Ensure Y-axis starts at zero
+                        }
+                    }
+                }
+            });
+        };
+
+</script>
+    
+</body>
+</html>
